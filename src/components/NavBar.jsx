@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { ChevronDown, Shield } from 'lucide-react';
 import Image from "next/image";
@@ -12,6 +12,20 @@ const Navbar = () => {
 
   /* State for Mobile Menu */
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 0) {
+        setIsScrolled(true);
+      } else {
+        setIsScrolled(false);
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   const platformSolutions = [
     {
@@ -97,12 +111,12 @@ const Navbar = () => {
   ];
 
   const companyItems = [
-    'About Us',
-    'Our Mission & Vision',
-    'Why Choose Us',
-    'Certifications & Compliance',
-    'Careers',
-    'Partners'
+    { title: 'About Us', href: '/about-us' },
+    { title: 'Our Mission & Vision', href: '#' },
+    { title: 'Why Choose Us', href: '#' },
+    { title: 'Certifications & Compliance', href: '#' },
+    { title: 'Careers', href: '#' },
+    { title: 'Partners', href: '#' }
   ];
 
   const [timeoutId, setTimeoutId] = useState(null);
@@ -125,13 +139,13 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="bg-dark-secondary/80 backdrop-blur-md shadow-md fixed w-full z-50 border-b border-white/5 transition-all duration-300">
+    <nav className={`fixed w-full z-50 border-b border-white/5 transition-all duration-300 backdrop-blur-md shadow-md ${isScrolled ? 'bg-dark-secondary/80' : 'bg-dark-secondary'}`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-20">
+        <div className="flex items-center justify-between h-18">
           {/* Logo */}
           <Link href="/" className="flex items-center">
             <div className="flex items-center gap-2">
-              <Image src="/austar.png" alt="Austar Logo" width={150} height={150} className="brightness-0 invert opacity-90 hover:opacity-100 transition-opacity w-32 md:w-48" />
+              <Image src="/austar.png" alt="Austar Logo" width={150} height={150} className="brightness-0 invert opacity-90 hover:opacity-100 transition-opacity w-32 md:w-42" />
             </div>
           </Link>
 
@@ -160,7 +174,7 @@ const Navbar = () => {
 
               {openDropdown === 'platform' && (
                 <div
-                  className="fixed left-1/2 -translate-x-1/2 top-20 pt-0 w-[90vw] max-w-[1600px] z-50 animate-fadeIn"
+                  className="fixed left-1/2 -translate-x-1/2 top-18 pt-0 w-[90vw] max-w-[1600px] z-50 animate-fadeIn"
                   onMouseEnter={() => handleMouseEnter('platform')}
                   onMouseLeave={handleMouseLeave}
                 >
@@ -332,10 +346,10 @@ const Navbar = () => {
                       {companyItems.map((item, idx) => (
                         <li key={idx}>
                           <Link
-                            href="#"
+                            href={item.href}
                             className="block text-text-secondary hover:text-brand-red transition-colors duration-200 font-['Outfit']"
                           >
-                            {item}
+                            {item.title}
                           </Link>
                         </li>
                       ))}
@@ -405,8 +419,8 @@ const Navbar = () => {
             <div className="space-y-3 py-2 border-b border-white/5">
               <div className="text-brand-red font-medium font-outfit mb-2 text-lg">Company</div>
               {companyItems.map((item, idx) => (
-                <Link key={idx} href="#" className="block text-white/80 py-2 text-base font-outfit" onClick={() => setIsMobileMenuOpen(false)}>
-                  {item}
+                <Link key={idx} href={item.href} className="block text-white/80 py-2 text-base font-outfit" onClick={() => setIsMobileMenuOpen(false)}>
+                  {item.title}
                 </Link>
               ))}
             </div>

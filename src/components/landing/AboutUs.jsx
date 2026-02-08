@@ -10,7 +10,7 @@ const AboutUs = () => {
 
                 {/* Content */}
                 <div className="relative z-10 max-w-2xl">
-                    <span className="text-white/80 font-medium font-outfit mb-6 block tracking-wide">About Us</span>
+                    <span className="text-white/80 font-medium mb-6 block tracking-wide">About Us</span>
                     <h2 className="text-3xl md:text-5xl lg:text-6xl font-bold text-white font-outfit leading-[1.15]">
                         A security-first technology studio
                         <br />
@@ -45,7 +45,7 @@ const AboutUs = () => {
                     </div>
 
                     <div className="pt-4">
-                        <Link href="/about" className="inline-flex items-center gap-2 bg-brand-red text-white px-8 py-3.5 rounded-lg hover:bg-red-700 transition-colors duration-300 font-medium font-outfit group">
+                        <Link href="/about-us" className="inline-flex items-center gap-2 bg-brand-red text-white px-8 py-3.5 rounded-lg hover:bg-red-700 transition-colors duration-300 font-medium font-outfit group">
                             Learn More
                             <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                         </Link>
