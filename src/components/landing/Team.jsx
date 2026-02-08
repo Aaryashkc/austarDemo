@@ -11,7 +11,7 @@ const teamMembers = [
         name: 'Sarah Johnson',
         role: 'Chief Executive Officer',
         bio: 'Visionary leader with 15+ years in cybersecurity, driving innovation and strategic growth for global enterprises.',
-        image: '/images/heroimage.png', // Placeholder
+        image: '/images/heroimage.png', 
         socials: { linkedin: '#', twitter: '#' }
     },
     {
@@ -19,7 +19,7 @@ const teamMembers = [
         name: 'David Chen',
         role: 'CTO',
         bio: 'Expert in cloud security and AI-driven threat detection, leading our technical strategy and engineering teams.',
-        image: '/images/heroimage.png', // Placeholder
+        image: '/images/heroimage.png', 
         socials: { linkedin: '#', github: '#' }
     },
     {
@@ -27,7 +27,7 @@ const teamMembers = [
         name: 'Emily Rodriguez',
         role: 'Head of Product',
         bio: 'Passionately focused on user-centric design and product strategy, ensuring our solutions solve real-world problems.',
-        image: '/images/heroimage.png', // Placeholder
+        image: '/images/heroimage.png', 
         socials: { linkedin: '#', twitter: '#' }
     },
     {
@@ -35,7 +35,7 @@ const teamMembers = [
         name: 'Michael Chang',
         role: 'Lead Security Architect',
         bio: 'Architecting robust security frameworks and ensuring compliance across complex, regulated environments.',
-        image: '/images/heroimage.png', // Placeholder
+        image: '/images/heroimage.png', 
         socials: { linkedin: '#', github: '#' }
     },
     {
@@ -43,7 +43,7 @@ const teamMembers = [
         name: 'Jessica Lee',
         role: 'Director of Operations',
         bio: 'Streamlining processes and optimizing resource allocation to deliver projects on time and within budget.',
-        image: '/images/heroimage.png', // Placeholder
+        image: '/images/heroimage.png',
         socials: { linkedin: '#' }
     },
     {
@@ -51,7 +51,7 @@ const teamMembers = [
         name: 'Robert Wilson',
         role: 'Senior DevOps Engineer',
         bio: 'Automating infrastructure and deployment pipelines to accelerate delivery without compromising security.',
-        image: '/images/heroimage.png', // Placeholder
+        image: '/images/heroimage.png', 
         socials: { linkedin: '#', github: '#' }
     }
 ];
@@ -60,15 +60,15 @@ const Team = () => {
     const sliderRef = useRef(null);
 
     return (
-        <section className="relative py-20 lg:py-32 bg-background-light overflow-hidden">
+        <section className="relative py-10 lg:py-10 bg-white overflow-hidden">
             <div className="max-w-7xl mx-auto px-6 relative z-10 w-full">
                 <div className="flex flex-col lg:flex-row gap-12 lg:gap-24 items-start">
 
                     {/* Left Column: Static Content (40%) */}
-                    <div className="w-full lg:w-[40%] flex flex-col justify-center space-y-8 sticky top-32">
+                    <div className="w-full lg:w-[40%] flex flex-col space-y-8 sticky ">
                         <div>
                             <span className="inline-block text-brand-red font-bold tracking-widest text-sm mb-3 uppercase">
-                                Our People
+                                Together
                             </span>
                             <h2 className="text-4xl md:text-5xl font-bold text-text-primary mb-6 font-outfit leading-[1.1]">
                                 Our Team
@@ -87,12 +87,7 @@ const Team = () => {
                     </div>
 
                     {/* Right Column: Vertical Slider (60%) */}
-                    <div className="w-full lg:w-[60%] relative h-[600px]">
-                        {/* Gradient Masks for Fade Effect */}
-                        <div className="absolute top-0 left-0 right-0 h-12 bg-gradient-to-b from-background-light to-transparent z-20 pointer-events-none" />
-                        <div className="absolute bottom-0 left-0 right-0 h-12 bg-gradient-to-t from-background-light to-transparent z-20 pointer-events-none" />
-
-                        {/* Slider Container */}
+                    <div className="w-full lg:w-[60%] relative h-[800px] bg-background-light px-10 py-5 overflow-hidden">
                         <div
                             className="h-full overflow-y-auto scrollbar-hide snap-y snap-mandatory px-2 py-4 space-y-6"
                             ref={sliderRef}
@@ -154,7 +149,7 @@ const Team = () => {
             </div>
 
             {/* Decorative Red Quarter Circle (Bottom Left) */}
-            <div className="absolute -bottom-32 -left-32 w-[300px] h-[300px] bg-brand-red rounded-full opacity-10 pointer-events-none z-0" />
+            <div className="absolute -bottom-60 -left-60 w-[450px] h-[450px] bg-brand-red rounded-full pointer-events-none z-0" />
         </section>
     );
 };

@@ -36,6 +36,10 @@ const reasons = [
 const WhyChooseUs = () => {
     return (
         <section className="relative py-20 lg:py-32 bg-dark-secondary overflow-hidden">
+
+             <div className="absolute -top-60 -right-63 w-[500px] h-[500px] bg-[#8A8A8A]/20 rounded-full pointer-events-none z-0" />
+             <div className="absolute -bottom-50 -left-50 w-[500px] h-[500px] border-100 border-[#8A8A8A]/20 bg-transparent rounded-full pointer-events-none z-0" />
+
             {/* Background Background Elements - Abstract Curved Shapes */}
             <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none z-0">
                 {/* Subtle gradient overlay */}
@@ -85,8 +89,8 @@ const WhyChooseUs = () => {
                                 </p>
                             </div>
 
-                            {/* Decorative soft glow on hover (optional) */}
-                            <div className="absolute inset-0 rounded-xl bg-brand-red/0 group-hover:bg-brand-red/[0.01] transition-colors duration-300 pointer-events-none" />
+                            {/* Decorative soft glow on hover*/}
+                            <div className="absolute inset-0 rounded-xl bg-brand-red/0 group-hover:bg-brand-red/2  transition-colors duration-300 pointer-events-none" />
                         </div>
                     ))}
                 </div>

@@ -119,19 +119,19 @@ const Platforms = () => {
     }, []);
 
     return (
-        <section className="py-20 lg:py-32 bg-background-light relative overflow-hidden">
+        <section className="py-16 lg:py-24 bg-background-light relative overflow-hidden">
             {/* Decorative Red Rectangle Background */}
-            <div className="absolute top-[35%] md:top-[30%] lg:top-[25%] bottom-0 right-[5%] md:right-[10%] lg:right-[15%] w-[80%] md:w-[60%] lg:w-[40%] bg-brand-red z-0 pointer-events-none" />
+            <div className="absolute top-[35%] md:top-[30%] lg:top-[0%] bottom-0 right-[5%] md:right-[10%] lg:right-[15%] w-[80%] md:w-[60%] lg:w-[40%] bg-brand-red z-0 pointer-events-none" />
 
             <div className="max-w-[1920px] mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
 
                 {/* Header */}
-                <div className="max-w-7xl mx-auto mb-12 lg:mb-16">
-                    <h2 className="text-3xl md:text-5xl font-bold text-text-primary mb-4 font-outfit leading-tight">
+                <div className="max-w-7xl mx-auto mb-8 lg:mb-12">
+                    <h2 className="text-2xl md:text-[2.8rem] font-bold text-text-primary font-outfit leading-tight">
                         Our <span className="text-brand-red">Technology</span> Platforms
                     </h2>
-                    <p className="text-text-secondary text-lg md:text-xl font-outfit font-light leading-relaxed max-w-3xl">
-                        Built to simplify operations, scale systems, and embed security at every <span className="text-brand-red font-medium">layer</span>.
+                    <p className="text-text-secondary text-sm md:text-lg font-light leading-relaxed max-w-3xl">
+                        Built to simplify operations, scale systems, and embed <br /> security at every <span className="text-brand-red font-medium">layer</span>.
                     </p>
                 </div>
 
@@ -142,7 +142,7 @@ const Platforms = () => {
                     {showLeftArrow && (
                         <button
                             onClick={() => scroll('left')}
-                            className="hidden lg:flex absolute left-4 top-1/2 -translate-y-1/2 z-30 w-12 h-12 bg-white rounded-full shadow-lg items-center justify-center text-text-primary hover:text-brand-red hover:scale-110 transition-all duration-300"
+                            className="hidden lg:flex absolute left-4 top-1/2 -translate-y-1/2 z-30 w-10 h-10 bg-white rounded-full shadow-lg items-center justify-center text-text-primary hover:text-brand-red hover:scale-110 transition-all duration-300"
                         >
                             <ChevronLeft className="w-6 h-6" />
                         </button>
@@ -151,7 +151,7 @@ const Platforms = () => {
                     {showRightArrow && (
                         <button
                             onClick={() => scroll('right')}
-                            className="hidden lg:flex absolute right-4 top-1/2 -translate-y-1/2 z-30 w-12 h-12 bg-white rounded-full shadow-lg items-center justify-center text-text-primary hover:text-brand-red hover:scale-110 transition-all duration-300"
+                            className="hidden lg:flex absolute right-4 top-1/2 -translate-y-1/2 z-30 w-10 h-10 bg-white rounded-full shadow-lg items-center justify-center text-text-primary hover:text-brand-red hover:scale-110 transition-all duration-300"
                         >
                             <ChevronRight className="w-6 h-6" />
                         </button>
@@ -160,7 +160,7 @@ const Platforms = () => {
                     {/* Scroll Track */}
                     <div
                         ref={scrollContainerRef}
-                        className="flex overflow-x-auto gap-6 pb-12 pt-4 px-4 lg:px-8 snap-x snap-mandatory scrollbar-hide cursor-grab active:cursor-grabbing select-none"
+                        className="flex overflow-x-auto gap-5 pb-8 pt-2 px-4 lg:px-6 snap-x snap-mandatory scrollbar-hide cursor-grab active:cursor-grabbing select-none"
                         onMouseDown={handleMouseDown}
                         onMouseLeave={handleMouseLeave}
                         onMouseUp={handleMouseUp}
@@ -170,7 +170,7 @@ const Platforms = () => {
                         {platforms.map((platform) => (
                             <div
                                 key={platform.id}
-                                className="flex-shrink-0 w-[85vw] md:w-[45vw] lg:w-[30vw] snap-center lg:snap-start relative h-[450px] md:h-[500px] rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition-shadow duration-300 group/card"
+                                className="flex-shrink-0 w-[85vw] md:w-[45vw] lg:w-[30vw] snap-center lg:snap-start relative h-[360px] md:h-[500px] rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition-shadow duration-300 group/card"
                             >
                                 {/* Background Image */}
                                 <div className="absolute inset-0">
@@ -185,16 +185,16 @@ const Platforms = () => {
                                 </div>
 
                                 {/* Content Overlay Card */}
-                                <div className="absolute bottom-6 left-6 right-6 bg-white rounded-2xl p-6 md:p-8 shadow-[0_8px_30px_rgb(0,0,0,0.12)]">
-                                    <h3 className="text-xl md:text-2xl font-bold text-text-primary mb-3 font-outfit">
+                                <div className="absolute bottom-5 left-5 right-5 bg-white rounded-2xl p-5 md:p-6 min-h-[300px] md:min-h-[300px] shadow-[0_8px_30px_rgb(0,0,0,0.12)]">
+                                    <h3 className="text-lg md:text-xl font-bold text-text-primary mb-2">
                                         {platform.title}
                                     </h3>
-                                    <p className="text-text-secondary text-sm md:text-base mb-6 font-outfit line-clamp-3">
+                                    <p className="text-text-secondary text-sm md:text-base mb-4 line-clamp-3">
                                         {platform.description}
                                     </p>
 
                                     <Link href={platform.link}>
-                                        <button className="bg-brand-red text-white pr-4 pl-6 py-2.5 rounded-full font-medium text-sm flex items-center gap-3 hover:bg-red-700 transition-colors duration-300 font-outfit group/btn w-max">
+                                        <button className="bg-brand-red text-white mt-10 pr-6 pl-6 py-5 rounded-full font-medium text-sm flex items-center gap-3 hover:bg-red-700 transition-colors duration-300 group/btn w-max">
                                             Learn More
                                             <div className="bg-white/20 rounded-full p-1 group-hover/btn:translate-x-1 transition-transform duration-300">
                                                 <ArrowRight className="w-3 h-3 text-white" />

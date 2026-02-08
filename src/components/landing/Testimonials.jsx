@@ -114,14 +114,14 @@ const Testimonials = () => {
     };
 
     return (
-        <section className="py-20 lg:py-32 bg-white overflow-hidden select-none">
+        <section className="py-12 lg:py-16 bg-white overflow-hidden select-none">
             <div className="max-w-7xl mx-auto px-6 relative z-10">
                 {/* Heading */}
-                <div className="text-center mb-16 md:mb-24">
+                <div className="text-center mb-8 md:mb-12">
                     <span className="inline-block text-brand-red font-bold tracking-widest text-sm mb-3 uppercase">
                         Testimonials
                     </span>
-                    <h2 className="text-3xl md:text-5xl font-bold text-text-primary mb-6 font-outfit leading-[1.1]">
+                    <h2 className="text-3xl md:text-4xl font-bold text-text-primary mb-4 font-outfit leading-[1.1]">
                         What Our <span className="text-brand-red">Customers</span> Are Saying
                     </h2>
                 </div>
@@ -132,14 +132,14 @@ const Testimonials = () => {
                     {/* Navigation Buttons */}
                     <button
                         onClick={prevSlide}
-                        className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 md:-translate-x-12 z-30 w-12 h-12 bg-white rounded-full shadow-lg border border-gray-100 flex items-center justify-center text-text-primary hover:text-brand-red hover:scale-110 transition-all duration-300"
+                        className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-3 md:-translate-x-8 z-30 w-10 h-10 bg-white rounded-full shadow-lg border border-gray-100 flex items-center justify-center text-text-primary hover:text-brand-red hover:scale-110 transition-all duration-300"
                     >
                         <ChevronLeft className="w-6 h-6" />
                     </button>
 
                     <button
                         onClick={nextSlide}
-                        className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 md:translate-x-12 z-30 w-12 h-12 bg-white rounded-full shadow-lg border border-gray-100 flex items-center justify-center text-text-primary hover:text-brand-red hover:scale-110 transition-all duration-300"
+                        className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-3 md:translate-x-8 z-30 w-10 h-10 bg-white rounded-full shadow-lg border border-gray-100 flex items-center justify-center text-text-primary hover:text-brand-red hover:scale-110 transition-all duration-300"
                     >
                         <ChevronRight className="w-6 h-6" />
                     </button>
@@ -172,7 +172,7 @@ const Testimonials = () => {
                         Re-implementation of the render logic for the specific "Center Emphasis" 
                         We will render a visible window. 
                     */}
-                    <div className="relative h-[450px] md:h-[400px] flex items-center justify-center">
+                    <div className="relative h-[300px] md:h-[320px] flex items-center justify-center">
                         {testimonials.map((testimonial, index) => {
                             // Calculate relative position to current index
                             let position = index - currentIndex;
@@ -210,12 +210,12 @@ const Testimonials = () => {
                             return (
                                 <div
                                     key={testimonial.id}
-                                    className={`absolute top-0 w-full md:w-[600px] transition-all duration-500 ease-in-out ${cardClass}`}
+                                    className={`absolute top-0 w-full md:w-[520px] transition-all duration-500 ease-in-out ${cardClass}`}
                                 >
-                                    <div className="bg-white rounded-2xl p-8 md:p-12 h-full flex flex-col items-center text-center shadow-[0_10px_40px_-10px_rgba(0,0,0,0.08)]">
+                                    <div className="bg-white rounded-2xl p-5 md:p-7 h-full flex flex-col items-center text-center shadow-[0_10px_40px_-10px_rgba(0,0,0,0.08)]">
 
                                         {/* Avatar */}
-                                        <div className="relative w-20 h-20 mb-6 rounded-full overflow-hidden border-4 border-white shadow-md">
+                                        <div className="relative w-16 h-16 mb-4 rounded-full overflow-hidden border-4 border-white shadow-md">
                                             <Image
                                                 src={testimonial.image}
                                                 alt={testimonial.name}
@@ -225,15 +225,15 @@ const Testimonials = () => {
                                         </div>
 
                                         {/* Name & Role */}
-                                        <h3 className="text-xl font-bold text-text-primary font-outfit mb-1">
+                                        <h3 className="text-lg font-bold text-text-primary font-outfit mb-1">
                                             {testimonial.name}
                                         </h3>
-                                        <p className="text-sm font-medium text-text-secondary mb-6 uppercase tracking-wide">
+                                        <p className="text-xs font-medium text-text-secondary mb-4 uppercase tracking-wide">
                                             {testimonial.role}, {testimonial.company}
                                         </p>
 
                                         {/* Quote */}
-                                        <blockquote className="text-lg md:text-xl text-gray-600 font-outfit font-light italic leading-relaxed mb-8 max-w-lg">
+                                        <blockquote className="text-base md:text-lg text-gray-600 font-outfit font-light italic leading-relaxed mb-5 max-w-lg line-clamp-3">
                                             "{testimonial.text}"
                                         </blockquote>
 
@@ -253,7 +253,7 @@ const Testimonials = () => {
                     </div>
 
                     {/* Dots Indicator */}
-                    <div className="flex justify-center gap-2 mt-8 md:mt-12">
+                    <div className="flex justify-center gap-2 mt-5 md:mt-8">
                         {testimonials.map((_, index) => (
                             <button
                                 key={index}
