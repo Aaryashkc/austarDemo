@@ -19,6 +19,10 @@
   --font-outfit: 'Outfit', sans-serif;
 }
 
+*{
+  font-family: var(--font-outfit);
+}
+
 /* Keyframe Animations */
 @keyframes fadeIn {
   from {

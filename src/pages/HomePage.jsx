@@ -8,7 +8,6 @@ import Testimonials from '@/components/landing/Testimonials'
 import RecentBlogs from '@/components/landing/RecentBlogs'
 import CTA from '@/components/landing/CTA'
 import WhyChooseUs from '@/components/landing/WhyChooseUs'
-import Footer from '@/components/layout/Footer'
 import React from 'react'
 
 const HomePage = () => {
@@ -24,7 +23,6 @@ const HomePage = () => {
       <Testimonials />
       <RecentBlogs />
       <CTA />
-      <Footer />
     </div>
   )
 }

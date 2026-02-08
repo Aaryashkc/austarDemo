@@ -47,12 +47,12 @@ const featuredBlog = {
 
 const RecentBlogs = () => {
     return (
-        <section className="py-20 bg-brand-red relative">
+        <section className="py-10 bg-brand-red relative">
             {/* Background Texture/Pattern (Optional - sticking to clean for now) */}
 
             <div className="max-w-7xl mx-auto px-6">
                 {/* Intro */}
-                <div className="mb-12 text-white">
+                <div className="mb-5 text-white">
                     <span className="font-bold tracking-widest text-sm mb-3 uppercase opacity-80 block">
                         Insights
                     </span>
@@ -62,24 +62,24 @@ const RecentBlogs = () => {
                 </div>
 
                 {/* Main Content Container */}
-                <div className="bg-white rounded-3xl shadow-2xl p-6 md:p-12 overflow-hidden">
-                    <div className="flex flex-col-reverse lg:flex-row gap-12 lg:gap-16">
+                <div className="bg-white rounded-3xl shadow-2xl p-3 md:p-5 overflow-hidden">
+                    <div className="flex flex-col-reverse lg:flex-row gap-6 lg:gap-8">
 
                         {/* Left Column: Recent Blogs List */}
                         <div className="w-full lg:w-[40%] flex flex-col justify-between">
-                            <div className="space-y-8">
+                            <div className="space-y-5">
                                 <h3 className="text-xl font-bold text-gray-900 border-b border-gray-100 pb-4">
                                     Latest Updates
                                 </h3>
 
-                                <div className="space-y-6">
+                                <div className="space-y-4">
                                     {recentBlogs.map((blog) => (
                                         <Link
                                             href={blog.link}
                                             key={blog.id}
                                             className="group flex gap-5 items-start hover:bg-gray-50 p-4 -mx-4 rounded-xl transition-colors duration-300"
                                         >
-                                            <div className="relative w-24 h-24 flex-shrink-0 rounded-lg overflow-hidden bg-gray-100">
+                                            <div className="relative w-18 h-18 flex-shrink-0 rounded-lg overflow-hidden bg-gray-100">
                                                 <Image
                                                     src={blog.image}
                                                     alt={blog.title}
@@ -105,7 +105,7 @@ const RecentBlogs = () => {
                                 </div>
                             </div>
 
-                            <div className="mt-8 pt-6 border-t border-gray-100">
+                            <div className="mt-5 pt-4 border-t border-gray-100">
                                 <Link href="/blog" className="inline-flex items-center gap-2 text-gray-900 font-bold hover:text-brand-red transition-colors duration-300">
                                     View All Articles
                                     <ArrowRight className="w-4 h-4" />
@@ -115,7 +115,7 @@ const RecentBlogs = () => {
 
                         {/* Right Column: Featured Blog */}
                         <div className="w-full lg:w-[60%]">
-                            <Link href={featuredBlog.link} className="group block relative h-[400px] lg:h-full min-h-[500px] rounded-2xl overflow-hidden shadow-lg">
+                            <Link href={featuredBlog.link} className="group block relative h-[200px] lg:h-full min-h-[260px] rounded-2xl overflow-hidden shadow-lg">
                                 {/* Image */}
                                 <Image
                                     src={featuredBlog.image}
@@ -133,19 +133,19 @@ const RecentBlogs = () => {
                                 </div>
 
                                 {/* Content */}
-                                <div className="absolute bottom-0 left-0 p-6 md:p-10 w-full text-white">
+                                <div className="absolute bottom-0 left-0 p-3 md:p-5 w-full text-white">
                                     <div className="mb-4 flex items-center gap-2 text-white/70 text-sm">
                                         <Calendar className="w-4 h-4" />
                                         <span>{featuredBlog.date}</span>
                                     </div>
-                                    <h3 className="text-2xl md:text-4xl font-bold mb-4 font-outfit leading-tight group-hover:text-white/90 transition-colors">
+                                    <h3 className="text-xl md:text-2xl font-bold mb-2 font-outfit leading-tight group-hover:text-white/90 transition-colors">
                                         {featuredBlog.title}
                                     </h3>
-                                    <p className="text-white/80 text-lg mb-8 line-clamp-2 max-w-xl leading-relaxed">
+                                    <p className="text-white/80 text-base mb-4 line-clamp-2 max-w-xl leading-relaxed">
                                         {featuredBlog.excerpt}
                                     </p>
 
-                                    <span className="inline-flex items-center gap-2 bg-white/20 backdrop-blur-sm border border-white/30 px-6 py-3 rounded-lg font-medium group-hover:bg-white group-hover:text-brand-red transition-all duration-300">
+                                    <span className="inline-flex items-center gap-2 bg-white/20 backdrop-blur-sm border border-white/30 px-5 py-3 rounded-lg font-medium group-hover:bg-white group-hover:text-brand-red transition-all duration-300">
                                         Read Article
                                         <ArrowRight className="w-4 h-4" />
                                     </span>
